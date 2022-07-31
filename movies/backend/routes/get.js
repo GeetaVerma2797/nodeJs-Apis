@@ -32,7 +32,7 @@ module.exports = {
                                 console.log("inside movieData");
                                 let date = new Date(movieData.released);
                                 let releaseYear = date.getFullYear();
-                                let rate = (movieData.ratings[0].value).split("/")[0];
+                                let rate = movieData.ratings[0] ? (movieData.ratings[0].value).split("/")[0] : 0;
                                 console.log("release year", releaseYear, rate)
                                 const movie = { 
                                     title : movieData.title,
@@ -307,6 +307,55 @@ movieByRatingRange: async function (req, res, next) {
             } else {
                 findQuery = await Movie.find({rating : rate});
             }
+
+                    console.log("docs", findQuery)
+
+                if(findQuery.length){
+                        res.json({
+                            status:{
+                                message: "Data Successfully fetched",
+                    
+                                code: 200
+                            },
+                            data:findQuery,
+                        });
+                    }
+                    else {
+                            res.json({
+                                status:{
+                                    message: "Data not found",
+                        
+                                    code: 201
+                                }
+                            });
+                          }
+                  
+
+                 
+        } else {
+            res.json({
+                status:{
+                    message: "Unauthorized user",
+        
+                    code: 401
+                }
+            });
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+},
+movieByGenre: async function (req, res, next) {
+    try {
+        console.log(req.headers["authorization"])
+        if(req.headers["authorization"] == authToken){
+
+            const genre = decodeURI(req.params.genre);
+
+            console.log("genre", genre)
+            let findQuery;
+                findQuery = await Movie.find({geners : { $in : [genre] } });
 
                     console.log("docs", findQuery)
 
