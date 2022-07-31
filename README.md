@@ -18,22 +18,22 @@ There are 6 apis:
 #static header value created because there is no user validation
 
 1. Movie By Title
-    eg: http://localhost:3000/api/movieByTitle/widow
+    eg: http://localhost:3001/api/movieByTitle/widow
 
     response: 
 
 2. Movie By Id
-    eg: http://localhost:3000/api/62e637147335b4286d422272
+    eg: http://localhost:3001/api/62e637147335b4286d422272
 
 3. Movie By Released Year
-    eg: http://localhost:3000/api/releasedYear/1998-2008
-        http://localhost:3000/api/releasedYear/2008
+    eg: http://localhost:3001/api/releasedYear/1998-2008
+        http://localhost:3001/api/releasedYear/2008
 
 4. Movie By Higher than Rating
-    eg: http://localhost:3000/api/rating/higherThan/2
+    eg: http://localhost:3001/api/rating/higherThan/2
 
 5. Movie By Lower than Rating
-    eg: http://localhost:3000/api/rating/lowerThan/9
+    eg: http://localhost:3001/api/rating/lowerThan/9
 
 6. Movie By Rating Range
-    http://localhost:3000/api/ratingRange/2-7
+    http://localhost:3001/api/ratingRange/2-7

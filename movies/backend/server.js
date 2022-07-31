@@ -2,7 +2,7 @@ const express = require('express');
 const app = express()
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.set('port', port);
 const path = require('path');
 
@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_ATLAS_URL)
 })
 
 
-console.log(decodeURI("geeta%20Verma"));
+// console.log(decodeURI("geeta%20Verma"));
 
 
 let details = require('./routes');
