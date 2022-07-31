@@ -1,0 +1,7 @@
+{
+    "env":{
+        "authToken": "dgd463464fe5d48f424a4eba745hgfhgd",
+        "imdbKey": "865625e2",
+        "MONGODB_ATLAS_URL": "mongodb+srv://geeta:BooAK90nMi4Xlx0K@cluster0.0iqu5.mongodb.net/?retryWrites=true&w=majority"
+    }
+}
