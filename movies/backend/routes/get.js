@@ -1,5 +1,4 @@
 const Movie = require('../models/movie');
-const post = require('./post');
 const imdb = require('imdb-api')
 const authToken = process.env.authToken;
 const imdbKey = "865625e2";
