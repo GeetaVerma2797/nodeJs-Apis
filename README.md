@@ -4,7 +4,7 @@ movie apis
 
 IMDB apis used if data is not in the local collection db
 
-There are 6 apis:
+There are 7 apis:
 
 "headers": [
               {
@@ -37,3 +37,6 @@ There are 6 apis:
 
 6. Movie By Rating Range
     http://localhost:3001/api/ratingRange/2-7
+
+7. Movie by Genre
+    http://localhost:3001/api/byGenre/Mystery
