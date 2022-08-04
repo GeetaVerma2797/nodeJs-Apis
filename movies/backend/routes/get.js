@@ -355,7 +355,7 @@ movieByGenre: async function (req, res, next) {
 
             console.log("genre", genre)
             let findQuery;
-                findQuery = await Movie.find({geners : { $in : [genre] } });
+                findQuery = await Movie.find({geners : genre } );
 
                     console.log("docs", findQuery)
 

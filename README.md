@@ -20,8 +20,6 @@ There are 7 apis:
 1. Movie By Title
     eg: http://localhost:3001/api/movieByTitle/widow
 
-    response: 
-
 2. Movie By Id
     eg: http://localhost:3001/api/62e637147335b4286d422272
 
