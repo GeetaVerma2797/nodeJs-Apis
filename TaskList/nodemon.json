@@ -1,0 +1,9 @@
+{
+    "env":{
+        "JWT_KEY": "your_strong_salt_secret",
+        "host": "localhost",
+        "user": "root",
+        "password": "Geeta@123",
+        "database": "user_tasks"
+    }
+}
