@@ -9,7 +9,7 @@ let put = require('./put');
 let del = require('./delete');
 
 //POST requests
-router.post('/', checkAuth, fileUploadHandler, post.createTask);
+router.post('/', fileUploadHandler, post.createTask);
 router.put('/:id', checkAuth, fileUploadHandler, put.updateTask);
 
 router.get('/', checkAuth, get.getTasks);

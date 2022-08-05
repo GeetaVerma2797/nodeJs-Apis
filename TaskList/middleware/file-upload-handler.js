@@ -7,6 +7,7 @@ const MINE_TYPE_MAP = {
 const storage =  multer.diskStorage({
     // cb as callback
     filename:(req, file, cb)=>{
+        console.log("files", file)
         const name = file.originalname.toLocaleLowerCase().split(' ').join("-");
         const ext = MINE_TYPE_MAP[file.mimetype];
         cb(null, name+"-" + Date.now() + '.' + ext);
@@ -17,8 +18,8 @@ const storage =  multer.diskStorage({
         if(isValid){
             error = null;
         }
-        cb(error, 'images');
+        cb(error, 'files');
     }
 });
 
-module.exports = multer({storage:storage}).single('image');
+module.exports = multer({storage:storage}).single('attachment');
