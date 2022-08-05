@@ -11,10 +11,10 @@ module.exports = {
 console.log("emailToValidate", emailRegexp.test(req.body.email));
 
                 if((!req.body.userName || req.body.userName == '') || (!req.body.email || req.body.email == '' || !emailRegexp.test(req.body.email))){
-                    return res.json({
+                    return res.status(400).json({
                         status:{
                             message: "Client side errors",
-                            code: 401
+                            code: 400
                         }
                   });
                 
@@ -25,10 +25,10 @@ console.log("emailToValidate", emailRegexp.test(req.body.email));
                     let user = sql.query(fetchQuery, async function (err, result) {
                         if (err) throw err;
                         if(result.length > 0){
-                            return res.json({
+                            return res.status(400).json({
                                 status:{
                                     message: "User already exists with this email id",
-                                    code: 200
+                                    code: 400
                                 }
                           });
                         } else {
@@ -44,7 +44,7 @@ console.log("emailToValidate", emailRegexp.test(req.body.email));
                                 sql.query(insertQuery, function (err, result) {
                                     if (err) throw err;
                                     console.log("1 record inserted");
-                                    return res.json({
+                                    return res.status(201).json({
                                         status:{
                                             message: "Registered successfully",
                                             code: 201

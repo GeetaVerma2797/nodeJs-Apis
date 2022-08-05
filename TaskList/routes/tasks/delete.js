@@ -14,14 +14,14 @@ module.exports = {
                 console.log("Task deleted successfully");
                 if(result.affectedRows > 0){
 
-                    return res.json({
+                    return res.status(205).json({
                         status:{
                             message: "Task deleted successfully",
                             code: 205
                         }
                     });
                 } else {
-                    return res.json({
+                    return res.status(401).json({
                         status:{
                             message: "Invalid task id for current user",
                             code: 401

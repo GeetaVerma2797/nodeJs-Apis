@@ -10,7 +10,7 @@ module.exports = {
             sql.query(fetchQuery, function (err, result) {
                 if (err) throw err;
                 console.log("rows fetched");
-                return res.json({
+                return res.status(200).json({
                     status:{
                         message: "successfull",
                         code: 200

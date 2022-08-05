@@ -7,16 +7,16 @@ module.exports = {
             console.log(req.body);
             let title = req.body.title;
             let dueDate = req.body.due_date;
-            let filePath = url + '/files/' + (req.file ? req.file.attachment : req.body.attachment);
+            let filePath = url + '/files/' + req.file.filename;
             let userId = req.userData.userId
-            console.log("filePath", filePath)
+            console.log("filePath", filePath, req.file)
 
             let  insertQuery = "INSERT INTO `tasks` (title, attachment, due_date, userId) VALUES ('"+title+"','"+filePath+"','"+dueDate+"','"+userId+"')";
             console.log("query",  insertQuery)
             sql.query(insertQuery, function (err, result) {
                 if (err) throw err;
                 console.log("1 record inserted");
-                return res.json({
+                return res.status(201).json({
                     status:{
                         message: "Data inserted successfully",
                         code: 201
