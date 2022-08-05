@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const sql = require("../../db");
 var bcrypt = require("bcrypt");
 
 module.exports = {
@@ -44,7 +43,7 @@ console.log("emailToValidate", emailRegexp.test(req.body.email));
                                 sql.query(insertQuery, function (err, result) {
                                     if (err) throw err;
                                     console.log("1 record inserted");
-                                    return res.status(201).json({
+                                    return res.status.json({
                                         status:{
                                             message: "Registered successfully",
                                             code: 201

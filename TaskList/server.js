@@ -5,11 +5,12 @@ const cors = require('cors');
 const port = process.env.PORT || 3000;
 app.set('port', port);
 const path = require('path');
+global.sql = require('./db');
 
 
 
-let users = require('./routes/users');
-let tasks = require('./routes/tasks');
+const users = require('./routes/users');
+const tasks = require('./routes/tasks');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + '/public'));

@@ -1,4 +1,3 @@
-const sql = require("../../db");
 
 module.exports = {
 	createTask: async function (req, res, next) {
